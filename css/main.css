@@ -121,9 +121,48 @@ body {
   position: fixed;
   z-index: 4; }
 
+/* description */
+.me {
+  width: 100vw;
+  height: 60vh;
+  margin-top: 50vh; }
+
+.avatarContent {
+  width: 70vw;
+  margin: auto; }
+
+@keyframes avatar {
+  from {
+    transform: rotateX(90deg) rotateY(90deg); }
+  to {
+    transform: rotateX(0deg) rotateY(0deg); } }
+.avatar {
+  animation-name: avatar;
+  animation-duration: 3.5s;
+  height: 35vh;
+  width: auto;
+  margin: auto; }
+
+.titleDesc {
+  margin: 40px;
+  width: 30vw;
+  font-size: 3em;
+  color: #B3B3B3;
+  font-family: "alien", Helvetica; }
+
+.desc {
+  margin-left: 25px;
+  min-width: 200px; }
+
+.desc::first-line {
+  color: #B3B3B3; }
+
+.bigL {
+  font-size: 2em;
+  color: #00C700; }
+
 section.section1 {
   height: 41.4vh;
-  margin-top: 56.5vh;
   background-image: url("../assets/img/BGtriangle.svg");
   background-repeat: no-repeat no-repeat;
   background-size: cover;
@@ -146,7 +185,7 @@ h2.titlesection {
   font-weight: 100;
   margin: 12px;
   margin-left: 15vw;
-  margin-top: 10vh;
+  margin-top: 5vh;
   padding-right: 60vw;
   border-bottom: 1px solid #00C700; }
 
@@ -176,11 +215,6 @@ object.logoS {
 .logoS {
   height: 50px;
   fill: #B3B3B3;
-  margin: auto; }
-
-.logoS:hover {
-  height: 50px;
-  fill: #00C700;
   margin: auto; }
 
 @keyframes rotateBar {
