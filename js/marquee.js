@@ -19,7 +19,7 @@ function rotulo_title() {
     document.title=txt;
     var txt=txt.substring(1,txt.length)+txt.charAt(0);
     refresco=setTimeout(rotulo_title,delay);
-}
+};
 
 function logoAnimation(scrollTop){
     if (scrollTop > 40 ){
