@@ -46,3 +46,4 @@ function imageAnimation(scrollTop){
         $(".animI").addClass("imgAnim");
     }
 };
+ 
