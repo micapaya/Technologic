@@ -38,7 +38,34 @@ var scrollTop = $(window).scrollTop()
       });
       
 }); 
- 
+
+var scrollfunction = $(window).scroll(function(){
+
+var scrollTop = $(window).scrollTop()
+
+      if (scrollTop > 700 )
+      {
+          $(".animI").addClass("imgAnim");
+          
+      }
+     
+      
+       $(window).scroll(function() {
+      scrollfunction();
+      });
+      
+}); 
+
+
+var txt="// Mica Payage // développeur Web mobile ";
+var espera=50;
+var refresco=null;
+function rotulo_title() {
+        document.title=txt;
+        txt=txt.substring(1,txt.length)+txt.charAt(0);
+        refresco=setTimeout("rotulo_title()",espera);}
+rotulo_title();
+
 
      
       
