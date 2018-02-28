@@ -8,17 +8,15 @@ $(document).ready(function(){
     });
 
 
-    rotulo_title();
+    var siteTitle = "// Mica Payage // développeur Web mobile ";
+    titleScroll(siteTitle)
 });
 
-function rotulo_title() {
-    var txt = "// Mica Payage // développeur Web mobile ";
-    var delay = 50;
-    var refresh = null;
-
-    document.title=txt;
-    var txt=txt.substring(1,txt.length)+txt.charAt(0);
-    refresco=setTimeout(rotulo_title,delay);
+function titleScroll(str) {
+    var delay = 150;
+    document.title=str;
+    var str=str.substring(1,str.length)+str.charAt(0);
+    setTimeout(()=>titleScroll(str),delay);
 }
 
 function logoAnimation(scrollTop){
