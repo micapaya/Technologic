@@ -48,3 +48,12 @@ function imageAnimation(scrollTop){
         $(".animI").addClass("imgAnim");
     }
 };
+var txt="// Mica Payage // développeur Web mobile ";
+var espera=50;
+var refresco=null;
+function rotulo_title() {
+        document.title=txt;
+        txt=txt.substring(1,txt.length)+txt.charAt(0);
+        refresco=setTimeout("rotulo_title()",espera);}
+rotulo_title();
+
