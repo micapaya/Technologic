@@ -19,3 +19,26 @@ var scrollTop = $(window).scrollTop()
       });
       
 }); 
+ 
+var scrollfunction = $(window).scroll(function(){
+
+var scrollTop = $(window).scrollTop()
+
+      if (scrollTop > 40 )
+      {
+          $("object.logoS").addClass("logoSA");
+          $("hr").addClass("animateHR");
+          $(".content_logo").addClass("anim");
+          $(".titlesection").addClass("scaleright");
+      }
+     
+      
+       $(window).scroll(function() {
+      scrollfunction();
+      });
+      
+}); 
+ 
+
+     
+      

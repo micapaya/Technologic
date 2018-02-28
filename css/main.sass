@@ -11,7 +11,17 @@ $primary: #00C700
 	font-family: "alien"
 	src: url("../assets/fonts/alienleagueii.ttf")
 
+@font-face 
+	font-family: "helv"
+	src: url("../assets/fonts/Helvetica.otf")
+
+@font-face 
+	font-family: "bil"
+	src: url("../assets/fonts/MISTRAL.ttf")
+
 $alF: "alien", Helvetica
+$hel: "helv"
+$b: "bil"
 
 /* reset body and option block */
 
@@ -35,7 +45,9 @@ body
 	position: fixed
 	top: 0
 	z-index: 2
-
+a, a:hover, a:visited
+	text-decoration: none
+	color: $light
 .menu-item
 	margin: auto
 	padding-top: 10px
@@ -44,6 +56,7 @@ body
 	font-family: $alF
 	font-size: 1.5em
 	height: 42px
+
 
 .border
 	border-bottom: 1px solid transparent
@@ -116,6 +129,7 @@ body
 	background-size: 307% 242%
 	background-position: 48% 44%
 	perspective: 150px
+	z-index: 9999
 #double_ligne
 	color: $light
 	font-family: $alF
@@ -130,7 +144,7 @@ body
 	margin-top: 50.5vh
 	transition: margin-top 0.5s
 	position: fixed
-	z-index: 4
+	z-index: 9999
 
 
 marquee
@@ -162,15 +176,27 @@ section.grid
 		float: left
 		width: 35%	
 		margin: 25px
+		z-index: 1
 .avatar img
 	width: 100%
 	animation-name: avatar
 	animation-duration: 3.5s
+	z-index: 1
 .desc
 	grid-column: 3/4
+	border-left: 1px solid $primary
+	padding-left: 15px
+	font-family: $hel
 
 .desc::first-line
 	color: $light
+#mica
+	float: right
+	color: $light
+	font-family: $b
+	opacity: 1
+	font-size: 2em
+	font-weight: 100
 .bigL
 	font-size: 2em
 	color: $primary
@@ -180,6 +206,7 @@ section.section1
 	background-repeat: no-repeat no-repeat
 	background-size: cover
 	background-blend-mode: soft-light
+	margin-top: 1vh
 
 section.compétences
 	width: 50vw
@@ -191,8 +218,7 @@ section.compétences
 		transform: translate(0vw,0px)
 
 h2.titlesection
-	animation-name: scaleright
-	animation-duration: 1.6s
+	
 	text-align: center
 	font-family: $alF
 	font-size: 3em
@@ -202,6 +228,9 @@ h2.titlesection
 	margin-top: 5vh
 	padding-right: 60vw
 	border-bottom: 1px solid $primary
+.scaleright
+	animation-name: scaleright
+	animation-duration: 1.6s
 
 @keyframes scaleleft
 	from
@@ -210,12 +239,12 @@ h2.titlesection
 		transform: translate(0vw,0px)
 
 .content_logo
-	animation-name: scaleleft
-	animation-duration: 1.6s
 	width: 60vw
 	margin: auto
 	padding: 12px
-	
+.anim
+	animation-name: scaleleft
+	animation-duration: 1.6s	
 	
 @keyframes logoturn
 	from
@@ -224,6 +253,12 @@ h2.titlesection
 		transform: rotateY(0deg)
 
 object.logoS
+	// animation-name: logoturn
+	// animation-duration: 6s
+	max-width: 100%
+	min-width: 8%
+
+object.logoSA
 	animation-name: logoturn
 	animation-duration: 6s
 	max-width: 100%
@@ -241,9 +276,11 @@ object.logoS
 	to
 		transform: rotateX(0deg)
 hr
+	border: 1px solid $light
+
+hr.animateHR
 	animation-name: rotateBar
 	animation-duration: 8s
-	border: 1px solid $light
 
 p.description_1
 	margin: auto
@@ -251,17 +288,13 @@ p.description_1
 	width: 70vw
 	text-indent: 5em
 	padding: 1em
-	font-family: $alF
+	font-family: $hel
 
 p.description_1::first-letter
 	font-size: 2em
 	line-height: 0.4
 	color: $light
-	text-shadow: 0px 0px 50px $primary
 
-p.description_1::first-line
-	color: $light
-	text-shadow: 0px 0px 30px $primary
 
 
 .content-paragraphe
@@ -284,27 +317,24 @@ section.section2
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr
 	grid-gap: 25px
 	font-size: 20px
-	font-family: $alF
+	font-family: $hel
 	margin-top: 50px
+	padding-bottom: 50px
 	@media screen and (max-width: 697px)
 		grid-template-columns: 1fr 1fr
 .xp1
-	padding: 20px
 	@media screen and (min-width: 698px)
 		grid-column: 2/3
 		
 .xp2
-	padding: 15px
 	@media screen and (min-width: 698px)
 		grid-column: 3/4
 	
 .xp3
-	padding: 10px
 	@media screen and (min-width: 698px)
 		grid-column: 4/5
 	
 .xp4
-	padding: 5px
 	@media screen and (min-width: 698px)
 		grid-column: 5/6
 	
@@ -319,6 +349,7 @@ section.section2
 	color: $primary
 	font-size: 25px
 	text-align: center
+	font-family: $alF
 
 ul.galery_content
 	display: grid
@@ -341,7 +372,18 @@ ul.galery_content
 	grid-column: span 2
 
 
+@keyframes imgAnim
+	from
+		width: 0%
+		height: 0%
+
+	to
+		width: 100%
+		height: 100%
+
 .img_content img
+	animation-name: imgAnim
+	animation-duration: 5s
 	display: block
 	width: 100%
 	height: 100%
