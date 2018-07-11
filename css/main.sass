@@ -129,7 +129,7 @@ a, a:hover, a:visited
 	background-size: 307% 242%
 	background-position: 48% 44%
 	perspective: 150px
-	z-index: 9999
+	z-index: 999999999
 #double_ligne
 	color: $light
 	font-family: $alF
@@ -144,7 +144,7 @@ a, a:hover, a:visited
 	margin-top: 50.5vh
 	transition: margin-top 0.5s
 	position: fixed
-	z-index: 9999
+	z-index: 99999999999
 
 
 marquee
@@ -268,7 +268,20 @@ object.logoSA
 	fill: $light
 	margin: auto 
 
-
+a.link_pdf
+	right: 0
+	bottom: 0
+	font-family: $alF
+	font-size: 22px
+	color: $primary
+	padding: 12px
+	background-image: url("../assets/img/BGbutton.svg")
+	background-size: cover
+	position: fixed
+	transition: 1s
+a.link_pdf:hover
+	color: $light
+	transition: 1s
 
 @keyframes rotateBar
 	from
@@ -350,7 +363,11 @@ section.section2
 	font-size: 25px
 	text-align: center
 	font-family: $alF
-
+h3.galery_title
+	font-family: $alF
+	font-size: 40px
+	color: $primary
+	margin-left: 10vw
 ul.galery_content
 	display: grid
 	padding-left: 10vw
